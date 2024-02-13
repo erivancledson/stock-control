@@ -1,0 +1,9 @@
+<app-toolbar-navigation></app-toolbar-navigation>
+
+<!--passo productsDatas para a pagina filha, e recebe via output da fila os dados: (productEvent)="handleProductAction($event)"-->
+<app-products-table
+ [products]="productsDatas"
+ (productEvent)="handleProductAction($event)"
+ (deleteProductEvent)="handleDeleteProductAction($event)">
+</app-products-table>
+<p-confirmDialog [style]="{ width: '50vw' }"></p-confirmDialog> <!--para exibição da caixa de confirmação-->
