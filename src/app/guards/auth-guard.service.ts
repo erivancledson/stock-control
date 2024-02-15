@@ -14,7 +14,7 @@ export class AuthGuard {
     | Observable<boolean | UrlTree>
     | Promise<boolean | UrlTree>
     | boolean
-    | UrlTree { //tem varias formas de retorn = canActivate
+    | UrlTree { //tem varias formas de retorno = canActivate
     if (!this.userService.isLoggedIn()) { //se retornar false cai na home
       this.router.navigate(['/home']);
       return false;

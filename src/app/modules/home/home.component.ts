@@ -31,7 +31,7 @@ export class HomeComponent implements OnDestroy{
   })
 
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: FormBuilder, //formularios reativos
     private userService: UserService,
     private CookieService: CookieService,
     private messageService: MessageService,
@@ -79,12 +79,11 @@ export class HomeComponent implements OnDestroy{
     if(this.signupForm.value && this.signupForm.valid){
         this.userService.signupUser(this.signupForm.value as SignupUserRequest) //as faz um cast
         .pipe(takeUntil(this.destroy$)) //evita memory leak
-        .subscribe({
+        .subscribe({ //esta inscrevendo na chamada
           next: (response)=>{
-            if(response){
-              alert('Usuário teste criado com sucesso!')
+            if(response){ //os dados de retorno do callback
               this.signupForm.reset(); //limpa os campos do formulario
-              this.loginCard = true; //redireciona para o campo de login
+              this.loginCard = true; //redireciona para o formulario de login
 
               this.messageService.add({
                 severity: 'success',

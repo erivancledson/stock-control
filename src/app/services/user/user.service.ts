@@ -8,7 +8,7 @@ import { AuthRequest } from 'src/app/models/interfaces/user/auth/AuthRequest';
 import { AuthResponse } from 'src/app/models/interfaces/user/auth/AuthResponse';
 import { environment } from 'src/environments/environment';
 
-@Injectable({
+@Injectable({ //esse serviço pode ser injetado em qualquer classe quando está root
   providedIn: 'root'
 })
 export class UserService {
@@ -30,7 +30,7 @@ export class UserService {
   }
 
   isLoggedIn(): boolean {//valida se o usuário já esta logado na aplicação
-    const JWT_TOKEN = this.cookie.get('USER_INFO');//armazenado no cookie do navegador USER_INFO
-    return JWT_TOKEN ? true : false;//se a variavel retorna valor retorna true
+    const JWT_TOKEN = this.cookie.get('USER_INFO');//pega o cookie que está armazenado no navegador
+    return JWT_TOKEN ? true : false;//vai retornar true ou false. Se for true vai para a tela de dashboard
   }
 }

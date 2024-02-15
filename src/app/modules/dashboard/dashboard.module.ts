@@ -38,4 +38,4 @@ import { SharedModule } from 'src/app/shared/shared.module';
   providers:[CookieService, MessageService] //MessageService toast
 
 })
-export class DashboardModule { }
+export class DashboardModule { } //para ser exibidos em outros locais

@@ -12,10 +12,11 @@
         <div class="flex justify-content-center align-content-center text-align-center mt-3">
           <input type="password" pInputText placeholder="Senha" formControlName="password"/>
         </div>
-
+    <!--pRipple habilita as animações-->
         <div class="card flex justify-content-center mt-3">
           <button type="submit" pButton pRipple label="Login" [disabled]="!this.loginForm.valid"></button>
         </div>
+        <!-- style="cursor: pointer" para exibir a mão do mouse-->
         <span class="flex justify-content-center align-content-center text-align-center mt-3 text-red-600 font-semibold"
         style="cursor: pointer"
         (click)="loginCard = !loginCard"> <!---->
