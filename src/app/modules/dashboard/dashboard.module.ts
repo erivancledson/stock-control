@@ -30,7 +30,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
     ToolbarModule,
     CardModule,
     ToastModule,
-    ChartModule,
+    ChartModule, //biblioteca de graficos
     //shared para ter acesso ao toolbar
     SharedModule
   ],

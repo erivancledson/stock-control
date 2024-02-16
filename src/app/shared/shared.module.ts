@@ -26,7 +26,7 @@ import { ShortenPipe } from './pipes/shorten/shorten.pipe';
     ButtonModule
   ],
 
-  exports: [ToolbarNavigationComponent, ShortenPipe],
-  providers: [DialogService, CurrencyPipe],
+  exports: [ToolbarNavigationComponent, ShortenPipe], //exportar o pipe criado
+  providers: [DialogService, CurrencyPipe], //para o modal = DialogService
 })
 export class SharedModule { }
