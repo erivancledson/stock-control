@@ -40,7 +40,7 @@ public productsList: Array<GetAllProductsResponse> = [];
         next: (response) => {
           if(response.length > 0){
             this.productsList = response; //response é o array que tem todos os dados
-            this.productDtService.setProductsDatas(this.productsList);
+            this.productDtService.setProductsDatas(this.productsList); //BehaviorSubject
             this.setProductsChartConfig(); //chama o metodo para criar o grafico
           }
           }, error: (err) => {

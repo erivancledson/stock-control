@@ -53,6 +53,6 @@ import { ProductFormComponent } from './components/product-form/product-form.com
     TooltipModule
   ],
 
-  providers: [DialogService, ConfirmationService]
+  providers: [DialogService, ConfirmationService] //caixa de dialogo
 })
 export class ProductsModule { }

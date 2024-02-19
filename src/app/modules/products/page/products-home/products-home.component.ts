@@ -17,13 +17,13 @@ export class ProductsHomeComponent implements OnInit, OnDestroy{
 
   //quando se tem o dolar $, informa que ele é um observable
    private readonly destroy$: Subject<void> = new Subject();
-  private ref!: DynamicDialogRef;
+   private ref!: DynamicDialogRef;
 
    public productsDatas: Array<GetAllProductsResponse> = [];
 
    constructor(
     private productsService: ProductsService,
-    private productsDtService: ProductsDataTransferService,
+    private productsDtService: ProductsDataTransferService, //memoria de produtos
     private router: Router,
     private messageService: MessageService,
     private confirmationService: ConfirmationService,
@@ -34,17 +34,17 @@ export class ProductsHomeComponent implements OnInit, OnDestroy{
      this.getServiceProductsDatas();
    }
 
+   //produtos que está carregados em memoria
   getServiceProductsDatas() {
     //pega o array de produtos
     const productsLoaded = this.productsDtService.getProductsDatas();
     //verifica se é maior que zero
     if(productsLoaded.length > 0){
-      console.log('DADOS DE PRODUTOS', this.productsDatas);
         this.productsDatas = productsLoaded; //pega o que tem memoria
-    }else this.getAPIProductsDatas(); //quando ele não encontra em memoria vai buscar no back
-
+    }else this.getAPIProductsDatas(); //por este quando for fazer //quando ele não encontra em memoria vai buscar no back
   }
 
+  //fazer somente esse e chamar no onInit
   getAPIProductsDatas() {
     this.productsService
     .getAllProducts()
@@ -52,8 +52,7 @@ export class ProductsHomeComponent implements OnInit, OnDestroy{
     .subscribe({
       next: (response) => {
         if(response.length > 0){
-          this.productsDatas = response; //pega a resposta
-          console.log(this.productsDatas)
+          this.productsDatas = response; //pega a resposta e joga no array
         }
       },
       error: (err) => {
@@ -69,6 +68,7 @@ export class ProductsHomeComponent implements OnInit, OnDestroy{
     })
   }
 
+  //recebe do output
   handleProductAction(event: EventAction): void{
     if(event){
       //vai abrir o ProductFormComponent, feito uma modal

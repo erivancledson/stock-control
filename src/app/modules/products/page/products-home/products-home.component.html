@@ -1,6 +1,6 @@
 <app-toolbar-navigation></app-toolbar-navigation>
 
-<!--passo productsDatas para a pagina filha, e recebe via output da fila os dados: (productEvent)="handleProductAction($event)"-->
+<!--passo productsDatas para a pagina filha no @Input, e recebe via output da fila os dados: (productEvent)="handleProductAction($event)"-->
 <app-products-table
  [products]="productsDatas"
  (productEvent)="handleProductAction($event)"

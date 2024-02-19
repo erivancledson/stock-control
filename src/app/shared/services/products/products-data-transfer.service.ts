@@ -6,7 +6,9 @@ import { GetAllProductsResponse } from 'src/app/models/interfaces/products/respo
   providedIn: 'root'
 })
 export class ProductsDataTransferService {
-  // BehaviorSubject = termos acesso no valor emitido antes
+  // BehaviorSubject = termos acesso no valor emitido antes. Quando retorna observale coloca um $ para indentificar
+  //| null = informa que ele pode ser nulo tbm
+  //BehaviorSubject conseguimos ter acesso ao valor emitido antes
  public productsDataEmitter$ = new BehaviorSubject<Array<GetAllProductsResponse> | null>(null);
 
  public productsDatas: Array<GetAllProductsResponse> = [];
