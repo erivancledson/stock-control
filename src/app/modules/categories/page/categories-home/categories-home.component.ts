@@ -14,7 +14,7 @@ import { DeleteCategoryAction } from 'src/app/models/interfaces/categories/event
   templateUrl: './categories-home.component.html'
 })
 export class CategoriesHomeComponent implements OnInit, OnDestroy {
-  private readonly destroy$: Subject<void> = new Subject(); //desescreve
+  private readonly destroy$: Subject<void> = new Subject(); //desiscreve
   public categoriesDatas: Array<GetCategoriesResponse> = [];
 
   private ref!: DynamicDialogRef;
@@ -38,7 +38,7 @@ export class CategoriesHomeComponent implements OnInit, OnDestroy {
       .subscribe({
         next: (response) => {
           if (response.length > 0) {
-            this.categoriesDatas = response;
+            this.categoriesDatas = response; //armazena os dados da categoria
           }
         },
         error: (err) => {
