@@ -1,6 +1,6 @@
 <app-toolbar-navigation></app-toolbar-navigation>
 
-<!--passado do input do categories-table-->
+<!--passado do input do categories-table, envia a categoria para o filho: [categories]="categoriesDatas"-->
  <app-categories-table
  [categories]="categoriesDatas"
  (deleteCategoryEvent)="handleDeleteCategoryAction($event)"

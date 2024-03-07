@@ -38,7 +38,7 @@
     <div class="card flex flex-column md:flex-column gap-3">
       <input pInputText placeholder="Nome" formControlName="name" />
          <!-- Categoria do produto, o array com as cattegorias, selectedCategory = categoria que sera selecionada -->
-         <div *ngIf="renderDropdown">
+         <div *ngIf="renderDropdown"> <!--já retorna a propriedade selecionada-->
            <p-dropdown
            styleClass="w-full"
            [options]="categoriesDatas"

@@ -25,7 +25,7 @@ export class ProductFormComponent implements OnInit, OnDestroy {
 
   public categoriesDatas: Array<GetCategoriesResponse> = [];
   public selectedCategory: Array<{ name: string; code: string }> = [];
-  public productAction!: {  //passados pelo component pai que é o products-home-component
+  public productAction!: {  //passados pelo component pai que é o products-home-component, colocando quando tiver o editar
     event: EventAction;
     productDatas: Array<GetAllProductsResponse>;
   };
@@ -189,7 +189,7 @@ export class ProductFormComponent implements OnInit, OnDestroy {
   //para pegar os componentes selecionados na tela para o editar
   getProductSelectedDatas(productId: string): void {
     const allProducts = this.productAction?.productDatas;
-    //verofoca se tem os dados
+    //verifica se tem os dados
     if (allProducts.length > 0) {
       //pega somente o id que recebemos por parametro
       const productFiltered = allProducts.filter(
