@@ -79,7 +79,6 @@ export class CategoryFormComponent  implements OnInit, OnDestroy{
             }
           },
           error: (err) => {
-            console.log(err);
             this.categoryForm.reset();
             this.messageService.add({
               severity: 'error',

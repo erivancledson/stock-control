@@ -22,7 +22,7 @@ export class CategoriesTableComponent {
 
   public categorySelected!: GetCategoriesResponse; //retorna a categoria selecionada
 
-  //recede o id e o nome
+  //recebe o id e o nome
   handleDeleteCategoryEvent(category_id: string, categoryName: string): void {
     if (category_id !== '' && categoryName !== '') {
       //emite o evento para o pai

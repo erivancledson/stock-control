@@ -13,7 +13,7 @@ import { ShortenPipe } from './pipes/shorten/shorten.pipe';
 @NgModule({
   declarations: [
     ToolbarNavigationComponent,
-    ShortenPipe
+    ShortenPipe //pipe criado
   ],
   imports: [
     CommonModule,

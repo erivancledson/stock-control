@@ -104,7 +104,6 @@ export class CategoriesHomeComponent implements OnInit, OnDestroy {
             });
           },
           error: (err) => {
-            console.log(err);
             this.getAllCategories();
             this.messageService.add({
               severity: 'error',
